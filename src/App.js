@@ -1,12 +1,11 @@
 import './App.css';
 import React, { useState } from 'react';
 import ThreeDScene from './3d_tools/ThreeDScene';
-import { ReloadOutlined } from '@ant-design/icons';
-import { Breadcrumb, Button, Layout, Menu , theme } from 'antd';
+import MainMenuList from './command_tools/MainMenuList'
+import { Breadcrumb, Layout, theme } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
-  const items = [];
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -19,8 +18,7 @@ function App() {
       }}
     >
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <Button type="default" icon={<ReloadOutlined />} size={'small'} onClick={()=>{}}/>
-        <Menu theme="dark" mode="inline" items={items} />
+        <MainMenuList/>
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer, }}/>
